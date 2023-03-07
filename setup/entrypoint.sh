@@ -20,6 +20,14 @@ users_passwords=(
 	[beats_system]="${BEATS_SYSTEM_PASSWORD=:-}"
 )
 
+echo "[logstash_internal]=${LOGSTASH_INTERNAL_PASSWORD}"
+echo "[kibana_system]=${KIBANA_SYSTEM_PASSWORD}"
+echo "[metricbeat_internal]=${METRICBEAT_INTERNAL_PASSWORD}"
+echo "[filebeat_internal]=${FILEBEAT_INTERNAL_PASSWORD}"
+echo "[heartbeat_internal]=${HEARTBEAT_INTERNAL_PASSWORD}"
+echo "[monitoring_internal]=${MONITORING_INTERNAL_PASSWORD}"
+echo "[beats_system]=${BEATS_SYSTEM_PASSWORD}"
+
 declare -A users_roles
 users_roles=(
 	[logstash_internal]='logstash_writer'
