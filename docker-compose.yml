@@ -57,7 +57,7 @@ services:
       discovery.type: single-node
     networks:
       - elk
-    restart: unless-stopped
+    restart: always
 
   logstash:
     build:
@@ -67,6 +67,7 @@ services:
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,Z
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,Z
+      - ./logstash/templates:/usr/share/logstash/templates:ro,Z
     ports:
       - 5044:5044
       - 50000:50000/tcp
@@ -79,7 +80,7 @@ services:
       - elk
     depends_on:
       - elasticsearch
-    restart: unless-stopped
+    restart: always
 
   kibana:
     build:
@@ -96,7 +97,7 @@ services:
       - elk
     depends_on:
       - elasticsearch
-    restart: unless-stopped
+    restart: always
 
 networks:
   elk:

@@ -1,0 +1,23 @@
+{
+  "index_patterns": [
+    "logs-*"
+  ],
+  "template": {
+    "mappings": {
+      "properties": {
+        "uptime": {
+          "type": "float"
+        },
+        "ram": {
+          "type": "integer"
+        },
+        "cur_free": {
+          "type": "integer"
+        },
+        "min_free": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
